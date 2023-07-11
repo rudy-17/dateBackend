@@ -15,8 +15,9 @@ app.use(cors());
 
 
 // parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(express.json())
 
 // app.use("/",(req,res)=>{
