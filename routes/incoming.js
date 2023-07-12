@@ -58,7 +58,16 @@ router.get("/allTodo",async (req,res)=>{
     })
 
 })
+router.post("/delete",async (req,res)=>{
+    let toDelete= req.body.id
+    
+    let deletee=await Todo.deleteOne({id:toDelete}).then(response=>{
+        res.send(response)
+    }).catch(error=>{
+        res.send(error)
+    })
 
+})
 
 
 
